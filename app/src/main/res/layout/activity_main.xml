@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:splitMotionEvents="true"
+    tools:context="media.twowap.gum_car_controll.media.twowap.gum_car_control.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <ImageButton
+            android:layout_width="120dp"
+            app:srcCompat="@drawable/down"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="191dp"
+            android:id="@+id/imageButton2"
+            android:scaleType="fitCenter"
+            android:layout_height="120dp"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/imageButton1" />
+
+        <ImageButton
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:srcCompat="@drawable/up"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="71dp"
+            android:id="@+id/imageButton1"
+            android:scaleType="fitCenter"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_above="@+id/imageButton2"
+            android:layout_alignParentStart="true" />
+
+        <ImageButton
+            android:layout_width="60dp"
+            app:srcCompat="@drawable/disconnected"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp"
+            android:id="@+id/imageButton5"
+            android:scaleType="fitCenter"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+        <SeekBar
+            android:id="@+id/seekBar1"
+            android:max="9"
+            tools:layout_editor_absoluteX="392dp"
+            tools:layout_editor_absoluteY="16dp"
+            style="@android:style/Widget.SeekBar"
+            android:progress="5"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/textView2"
+            android:layout_alignParentEnd="true" />
+
+        <ImageButton
+            android:layout_width="60dp"
+            app:srcCompat="@drawable/light_off"
+            tools:layout_editor_absoluteX="60dp"
+            tools:layout_editor_absoluteY="0dp"
+            android:id="@+id/imageButton6"
+            android:scaleType="fitCenter"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/imageButton5" />
+
+        <ImageButton
+            android:layout_width="60dp"
+            app:srcCompat="@drawable/sound_off"
+            tools:layout_editor_absoluteX="120dp"
+            tools:layout_editor_absoluteY="0dp"
+            android:id="@+id/imageButton7"
+            android:scaleType="fitCenter"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/imageButton6" />
+
+        <ImageButton
+            android:layout_width="60dp"
+            app:srcCompat="@drawable/track_off"
+            tools:layout_editor_absoluteX="180dp"
+            tools:layout_editor_absoluteY="0dp"
+            android:id="@+id/imageButton8"
+            android:scaleType="fitCenter"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/imageButton7" />
+
+        <ImageButton
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:srcCompat="@drawable/left"
+            android:id="@+id/imageButton3"
+            android:scaleType="fitCenter"
+            android:layout_row="2"
+            android:layout_column="2"
+            tools:layout_editor_absoluteX="352dp"
+            tools:layout_editor_absoluteY="174dp"
+            android:layout_above="@+id/textView1"
+            android:layout_toStartOf="@+id/imageButton4" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="120dp"
+            tools:layout_editor_absoluteY="294dp"
+            android:id="@+id/textView1"
+            android:text="Disconnected"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/imageButton7" />
+
+        <TextView
+            android:text="Speed: 5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            tools:layout_editor_absoluteX="405dp"
+            tools:layout_editor_absoluteY="0dp"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/imageButton4"
+            android:layout_marginEnd="12dp" />
+
+        <ImageButton
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:srcCompat="@drawable/right"
+            android:id="@+id/imageButton4"
+            android:scaleType="fitCenter"
+            tools:layout_editor_absoluteX="472dp"
+            tools:layout_editor_absoluteY="95dp"
+            android:layout_alignTop="@+id/imageButton1"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="48dp" />
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
