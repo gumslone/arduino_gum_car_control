@@ -20,8 +20,8 @@ Sound on: V
 Sound off: v
 
 Auto mode (obstacle avoidance):
--Mode on: X
--Mode off: x
+- Mode on: X
+- Mode off: x
 
 Default:
--stop - S
+- stop - S
