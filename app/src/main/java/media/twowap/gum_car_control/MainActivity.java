@@ -266,7 +266,7 @@ public class MainActivity extends AppCompatActivity {
                 {
                     try
                     {
-                        BS.getOutputStream().write(progress);
+                        BS.getOutputStream().write(String.valueOf(progress).getBytes());
                     }
                     catch (IOException e)
                     {
@@ -321,15 +321,15 @@ public class MainActivity extends AppCompatActivity {
         {
             bluetooth_action = 'F';  //Forward
         }
-        else if(b2_status==2 && b3_status==1)
+        else if(b2_status==1 && b3_status==1)
         {
             bluetooth_action = 'H'; // Backward LEFT
         }
-        else if(b2_status==2 && b4_status==1)
+        else if(b2_status==1 && b4_status==1)
         {
             bluetooth_action = 'J'; // Backward RIGHT
         }
-        else if(b2_status==2)
+        else if(b2_status==1)
         {
             bluetooth_action = 'B'; //Backward
         }
@@ -360,36 +360,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-    }
-
-    private void forward()
-    {
-        if (BS!=null)
-        {
-            try
-            {
-                BS.getOutputStream().write("F".toString().getBytes());
-            }
-            catch (IOException e)
-            {
-                msg("Error");
-            }
-        }
-    }
-
-    private void backward()
-    {
-        if (BS!=null)
-        {
-            try
-            {
-                BS.getOutputStream().write("B".toString().getBytes());
-            }
-            catch (IOException e)
-            {
-                msg("Error");
-            }
-        }
     }
 
     // fast way to call Toast
