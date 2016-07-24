@@ -321,15 +321,15 @@ public class MainActivity extends AppCompatActivity {
         {
             bluetooth_action = 'F';  //Forward
         }
-        else if(b1_status==2 && b3_status==1)
+        else if(b2_status==2 && b3_status==1)
         {
             bluetooth_action = 'H'; // Backward LEFT
         }
-        else if(b1_status==2 && b4_status==1)
+        else if(b2_status==2 && b4_status==1)
         {
             bluetooth_action = 'J'; // Backward RIGHT
         }
-        else if(b1_status==2)
+        else if(b2_status==2)
         {
             bluetooth_action = 'B'; //Backward
         }
