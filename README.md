@@ -2,8 +2,8 @@
 android bluetooth controller for arduino car
 
 button - bluetooth command:
-up - F
-down - B
+-- up - F
+-- down - B
 left - L
 right - R
 up+right - I
