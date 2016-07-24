@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_devicelist"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:exported="true"
+    tools:context="media.twowap.gum_car_controll.media.twowap.gum_car_control.devicelist">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <TextView
+            android:text="Paired Devices"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp"
+            android:id="@+id/textView2"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+        <ListView android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_above="@+id/b1"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/textView2"
+            android:id="@+id/devicelist" />
+
+        <Button
+            android:text="Paired Devices"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/b1"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="263dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="64dp" />
+
+        <Button
+            android:text="Back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toStartOf="@+id/b1"
+            android:layout_marginEnd="44dp"
+            android:id="@+id/b2" />
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
