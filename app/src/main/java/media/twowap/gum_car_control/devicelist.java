@@ -59,7 +59,6 @@ public class devicelist extends AppCompatActivity {
         });
         b2.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
-                setContentView(R.layout.activity_devicelist);
                 Intent intent = new Intent(devicelist.this, MainActivity.class);
                 devicelist.this.startActivity(intent);
             }

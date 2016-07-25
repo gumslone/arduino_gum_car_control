@@ -85,6 +85,26 @@
             android:layout_alignParentTop="true"
             android:layout_toEndOf="@+id/imageButton6" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="180dp"
+            tools:layout_editor_absoluteY="294dp"
+            android:id="@+id/textView1"
+            android:text="Disconnected"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/imageButton7" />
+
+        <TextView
+            android:text="Speed: 5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            tools:layout_editor_absoluteX="417dp"
+            tools:layout_editor_absoluteY="0dp"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/imageButton4" />
+
         <ImageButton
             android:layout_width="60dp"
             app:srcCompat="@drawable/track_off"
@@ -97,6 +117,17 @@
             android:layout_toEndOf="@+id/imageButton7" />
 
         <ImageButton
+            android:layout_width="40dp"
+            app:srcCompat="@drawable/info"
+            tools:layout_editor_absoluteX="292dp"
+            tools:layout_editor_absoluteY="0dp"
+            android:id="@+id/imageButton9"
+            android:scaleType="fitCenter"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/imageButton3"
+            android:layout_height="40dp" />
+
+        <ImageButton
             android:layout_width="120dp"
             android:layout_height="120dp"
             app:srcCompat="@drawable/left"
@@ -106,29 +137,9 @@
             android:layout_column="2"
             tools:layout_editor_absoluteX="352dp"
             tools:layout_editor_absoluteY="174dp"
+            android:layout_marginBottom="11dp"
             android:layout_above="@+id/textView1"
             android:layout_toStartOf="@+id/imageButton4" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="120dp"
-            tools:layout_editor_absoluteY="294dp"
-            android:id="@+id/textView1"
-            android:text="Disconnected"
-            android:layout_alignParentBottom="true"
-            android:layout_toEndOf="@+id/imageButton7" />
-
-        <TextView
-            android:text="Speed: 5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView2"
-            tools:layout_editor_absoluteX="405dp"
-            tools:layout_editor_absoluteY="0dp"
-            android:layout_alignParentTop="true"
-            android:layout_toStartOf="@+id/imageButton4"
-            android:layout_marginEnd="12dp" />
 
         <ImageButton
             android:layout_width="120dp"
@@ -137,10 +148,10 @@
             android:id="@+id/imageButton4"
             android:scaleType="fitCenter"
             tools:layout_editor_absoluteX="472dp"
-            tools:layout_editor_absoluteY="95dp"
-            android:layout_alignTop="@+id/imageButton1"
+            tools:layout_editor_absoluteY="71dp"
+            android:layout_alignBottom="@+id/imageButton3"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="48dp" />
+            android:layout_marginBottom="34dp" />
 
     </RelativeLayout>
 

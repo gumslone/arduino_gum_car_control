@@ -14,7 +14,6 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.SeekBar;
-
 import java.io.IOException;
 import java.util.Set;
 import java.util.UUID;
@@ -24,7 +23,7 @@ import media.twowap.gum_car_controll.R;
 
 public class MainActivity extends AppCompatActivity {
     private final static int REQUEST_ENABLE_BT=1;
-    ImageButton b1,b2,b3,b4,b5,b6,b7,b8;
+    ImageButton b1,b2,b3,b4,b5,b6,b7,b8,b9;
     TextView t1,t2;
     SeekBar s1;
     int b1_status=0;
@@ -56,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         b6=(ImageButton)findViewById(R.id.imageButton6);
         b7=(ImageButton)findViewById(R.id.imageButton7);
         b8=(ImageButton)findViewById(R.id.imageButton8);
+        b9=(ImageButton)findViewById(R.id.imageButton9);
 
 
 
@@ -154,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
                 Disconnect();
                 t1.setText("Disconnected");
                 b5.setImageResource(R.drawable.disconnected);
-                setContentView(R.layout.activity_devicelist);
+                //setContentView(R.layout.activity_devicelist);
                 Intent intent = new Intent(MainActivity.this, devicelist.class);
                 MainActivity.this.startActivity(intent);
             }
@@ -256,7 +256,15 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        b9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(MainActivity.this, AppInfo.class);
+                MainActivity.this.startActivity(intent);
 
+            }
+        });
         s1.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
 
             @Override
