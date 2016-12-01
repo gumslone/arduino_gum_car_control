@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">GumCarControl</string>
     <string name="title_activity_devicelist">devicelist</string>
+
+    <string name="title_activity_app_info">AppInfo</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

@@ -11,7 +11,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:screenOrientation="landscape" android:name="media.twowap.gum_car_control.MainActivity">
+        <activity
+            android:name="media.twowap.gum_car_control.MainActivity"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,6 +25,7 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
+        <activity android:name="media.twowap.gum_car_control.AppInfo"></activity>
     </application>
 
 </manifest>
