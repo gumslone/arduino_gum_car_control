@@ -6,6 +6,8 @@ import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -23,9 +25,10 @@ import media.twowap.gum_car_controll.R;
 
 public class MainActivity extends AppCompatActivity {
     private final static int REQUEST_ENABLE_BT=1;
-    ImageButton b1,b2,b3,b4,b5,b6,b7,b8,b9;
+    ImageButton b1,b2,b3,b4,b5,b6,b7,b8,b9,b10;
     TextView t1,t2;
     SeekBar s1;
+    public Thread thread;
     int b1_status=0;
     int b2_status=0;
     int b3_status=0;
@@ -56,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         b7=(ImageButton)findViewById(R.id.imageButton7);
         b8=(ImageButton)findViewById(R.id.imageButton8);
         b9=(ImageButton)findViewById(R.id.imageButton9);
+        b10=(ImageButton)findViewById(R.id.imageButton10);
 
 
 
@@ -82,13 +86,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
-                if (event.getAction()==MotionEvent.ACTION_DOWN) {
-                    b1_status=1;
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        b1_status=1;
+                        break;
+                    //case MotionEvent.ACTION_MOVE:
+                    //    b1_status=1;
+                    //    break;
+                    case MotionEvent.ACTION_UP:
+                        b1_status=0;
+                        break;
                 }
-                if (event.getAction()==MotionEvent.ACTION_UP){
-                    b1_status=0;
-                }
-                send_movement_action();
                 return false;
             }
 
@@ -98,13 +106,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
-                if (event.getAction()==MotionEvent.ACTION_DOWN) {
-                    b2_status=1;
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        b2_status=1;
+                        break;
+                    //case MotionEvent.ACTION_MOVE:
+                    //    b2_status=1;
+                    //    break;
+                    case MotionEvent.ACTION_UP:
+                        b2_status=0;
+                        break;
                 }
-                if (event.getAction()==MotionEvent.ACTION_UP){
-                    b2_status=0;
-                }
-                send_movement_action();
                 return false;
             }
 
@@ -115,13 +127,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
-                if (event.getAction()==MotionEvent.ACTION_DOWN) {
-                    b3_status=1;
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        b3_status=1;
+                        break;
+                    //case MotionEvent.ACTION_MOVE:
+                    //    b3_status=1;
+                    //    break;
+                    case MotionEvent.ACTION_UP:
+                        b3_status=0;
+                        break;
                 }
-                if (event.getAction()==MotionEvent.ACTION_UP){
-                    b3_status=0;
-                }
-                send_movement_action();
                 return false;
             }
 
@@ -132,13 +148,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
-                if (event.getAction()==MotionEvent.ACTION_DOWN) {
-                    b4_status=1;
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        b4_status=1;
+                        break;
+                    //case MotionEvent.ACTION_MOVE:
+                    //    b4_status=1;
+                    //    break;
+                    case MotionEvent.ACTION_UP:
+                        b4_status=0;
+                        break;
                 }
-                if (event.getAction()==MotionEvent.ACTION_UP){
-                    b4_status=0;
-                }
-                send_movement_action();
                 return false;
             }
 
@@ -171,12 +191,44 @@ public class MainActivity extends AppCompatActivity {
                         if(bluetooth_lights=='w')
                         {
                             bluetooth_lights = 'W';
-                            b6.setImageResource(R.drawable.light_on);
+                            b6.setImageResource(R.drawable.front_light_on);
                         }
                         else
                         {
                             bluetooth_lights = 'w';
-                            b6.setImageResource(R.drawable.light_off);
+                            b6.setImageResource(R.drawable.front_light_off);
+                        }
+                        BS.getOutputStream().write(bluetooth_lights);
+                    }
+                    catch (IOException e)
+                    {
+                        msg("Error");
+                    }
+                }
+                else
+                {
+                    msg("Not connected");
+                }
+
+            }
+        });
+        b10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                if (BS!=null)
+                {
+                    try
+                    {
+                        if(bluetooth_lights=='u')
+                        {
+                            bluetooth_lights = 'U';
+                            b10.setImageResource(R.drawable.back_light_on);
+                        }
+                        else
+                        {
+                            bluetooth_lights = 'u';
+                            b10.setImageResource(R.drawable.back_light_off);
                         }
                         BS.getOutputStream().write(bluetooth_lights);
                     }
@@ -298,7 +350,29 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //send_movement_action();
+
+        thread = new Thread() {
+            public void run() {
+                Looper.prepare();
+                while(true)
+                {
+
+                    try {
+                        send_movement_action();
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+                }
+
+
+            }
+        };
+
     }
+
 
     private void Disconnect()
     {
@@ -307,6 +381,7 @@ public class MainActivity extends AppCompatActivity {
             try
             {
                 BS.close(); //close connection
+
             }
             catch (IOException e)
             { msg("Error");}
@@ -366,8 +441,6 @@ public class MainActivity extends AppCompatActivity {
                 msg("Error");
             }
         }
-
-
     }
 
     // fast way to call Toast
@@ -375,7 +448,6 @@ public class MainActivity extends AppCompatActivity {
     {
         Toast.makeText(getApplicationContext(),s,Toast.LENGTH_LONG).show();
     }
-
 
 
     private class ConnectBT extends AsyncTask<Void, Void, Void>  // UI thread
@@ -400,6 +472,7 @@ public class MainActivity extends AppCompatActivity {
                     BS = dispositivo.createInsecureRfcommSocketToServiceRecord(myUUID);//create a RFCOMM (SPP) connection
                     BluetoothAdapter.getDefaultAdapter().cancelDiscovery();
                     BS.connect();//start connection
+
                 }
             }
             catch (IOException e)
@@ -424,6 +497,7 @@ public class MainActivity extends AppCompatActivity {
                 t1.setText("Connected to: "+address);
                 b5.setImageResource(R.drawable.connected);
                 isBtConnected = true;
+                thread.start();
             }
             progress.dismiss();
         }

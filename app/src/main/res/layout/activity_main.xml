@@ -15,6 +15,98 @@
         tools:layout_editor_absoluteY="0dp">
 
         <ImageButton
+            android:layout_width="40dp"
+            app:srcCompat="@drawable/info"
+            tools:layout_editor_absoluteX="292dp"
+            tools:layout_editor_absoluteY="0dp"
+            android:id="@+id/imageButton9"
+            android:scaleType="fitCenter"
+            android:layout_alignParentTop="true"
+            android:layout_height="40dp"
+            android:layout_toEndOf="@+id/imageButton8" />
+
+        <ImageButton
+            android:layout_width="50dp"
+            app:srcCompat="@drawable/back_light_off"
+            tools:layout_editor_absoluteX="60dp"
+            tools:layout_editor_absoluteY="0dp"
+            android:id="@+id/imageButton10"
+            android:scaleType="fitCenter"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/imageButton6"
+            android:layout_height="50dp" />
+
+        <ImageButton
+            app:srcCompat="@drawable/sound_off"
+            tools:layout_editor_absoluteX="120dp"
+            tools:layout_editor_absoluteY="0dp"
+            android:id="@+id/imageButton7"
+            android:scaleType="fitCenter"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/imageButton10"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+        <ImageButton
+            app:srcCompat="@drawable/track_off"
+            tools:layout_editor_absoluteX="180dp"
+            tools:layout_editor_absoluteY="0dp"
+            android:id="@+id/imageButton8"
+            android:scaleType="fitCenter"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/imageButton7"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+        <ImageButton
+            app:srcCompat="@drawable/front_light_off"
+            tools:layout_editor_absoluteX="60dp"
+            tools:layout_editor_absoluteY="0dp"
+            android:id="@+id/imageButton6"
+            android:scaleType="fitCenter"
+            android:layout_marginStart="19dp"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/imageButton5"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+        <SeekBar
+            android:id="@+id/seekBar1"
+            android:max="9"
+            tools:layout_editor_absoluteX="392dp"
+            tools:layout_editor_absoluteY="16dp"
+            style="@android:style/Widget.SeekBar"
+            android:progress="5"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/textView2"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@+id/imageButton9" />
+
+        <ImageButton
+            app:srcCompat="@drawable/disconnected"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp"
+            android:id="@+id/imageButton5"
+            android:scaleType="fitCenter"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+        <ImageButton
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:srcCompat="@drawable/right"
+            android:id="@+id/imageButton4"
+            android:scaleType="fitCenter"
+            tools:layout_editor_absoluteX="472dp"
+            tools:layout_editor_absoluteY="71dp"
+            android:layout_marginBottom="31dp"
+            android:layout_alignBottom="@+id/imageButton3"
+            android:layout_alignParentEnd="true" />
+
+        <ImageButton
             android:layout_width="120dp"
             app:srcCompat="@drawable/down"
             tools:layout_editor_absoluteX="0dp"
@@ -25,7 +117,7 @@
             android:layout_row="2"
             android:layout_column="0"
             android:layout_alignParentBottom="true"
-            android:layout_alignStart="@+id/imageButton1" />
+            android:layout_alignParentStart="true" />
 
         <ImageButton
             android:layout_width="120dp"
@@ -41,59 +133,17 @@
             android:layout_alignParentStart="true" />
 
         <ImageButton
-            android:layout_width="60dp"
-            app:srcCompat="@drawable/disconnected"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="0dp"
-            android:id="@+id/imageButton5"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:srcCompat="@drawable/left"
+            android:id="@+id/imageButton3"
             android:scaleType="fitCenter"
-            android:layout_height="60dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true" />
-
-        <SeekBar
-            android:id="@+id/seekBar1"
-            android:max="9"
-            tools:layout_editor_absoluteX="392dp"
-            tools:layout_editor_absoluteY="16dp"
-            style="@android:style/Widget.SeekBar"
-            android:progress="5"
-            android:layout_width="200dp"
-            android:layout_height="30dp"
-            android:layout_below="@+id/textView2"
-            android:layout_alignParentEnd="true" />
-
-        <ImageButton
-            android:layout_width="60dp"
-            app:srcCompat="@drawable/light_off"
-            tools:layout_editor_absoluteX="60dp"
-            tools:layout_editor_absoluteY="0dp"
-            android:id="@+id/imageButton6"
-            android:scaleType="fitCenter"
-            android:layout_height="60dp"
-            android:layout_alignParentTop="true"
-            android:layout_toEndOf="@+id/imageButton5" />
-
-        <ImageButton
-            android:layout_width="60dp"
-            app:srcCompat="@drawable/sound_off"
-            tools:layout_editor_absoluteX="120dp"
-            tools:layout_editor_absoluteY="0dp"
-            android:id="@+id/imageButton7"
-            android:scaleType="fitCenter"
-            android:layout_height="60dp"
-            android:layout_alignParentTop="true"
-            android:layout_toEndOf="@+id/imageButton6" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="180dp"
-            tools:layout_editor_absoluteY="294dp"
-            android:id="@+id/textView1"
-            android:text="Disconnected"
-            android:layout_alignParentBottom="true"
-            android:layout_toEndOf="@+id/imageButton7" />
+            android:layout_row="2"
+            android:layout_column="2"
+            tools:layout_editor_absoluteX="352dp"
+            tools:layout_editor_absoluteY="174dp"
+            android:layout_above="@+id/textView1"
+            android:layout_toStartOf="@+id/imageButton4" />
 
         <TextView
             android:text="Speed: 5"
@@ -105,53 +155,15 @@
             android:layout_alignParentTop="true"
             android:layout_toStartOf="@+id/imageButton4" />
 
-        <ImageButton
-            android:layout_width="60dp"
-            app:srcCompat="@drawable/track_off"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             tools:layout_editor_absoluteX="180dp"
-            tools:layout_editor_absoluteY="0dp"
-            android:id="@+id/imageButton8"
-            android:scaleType="fitCenter"
-            android:layout_height="60dp"
-            android:layout_alignParentTop="true"
-            android:layout_toEndOf="@+id/imageButton7" />
-
-        <ImageButton
-            android:layout_width="40dp"
-            app:srcCompat="@drawable/info"
-            tools:layout_editor_absoluteX="292dp"
-            tools:layout_editor_absoluteY="0dp"
-            android:id="@+id/imageButton9"
-            android:scaleType="fitCenter"
-            android:layout_alignParentTop="true"
-            android:layout_toStartOf="@+id/imageButton3"
-            android:layout_height="40dp" />
-
-        <ImageButton
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            app:srcCompat="@drawable/left"
-            android:id="@+id/imageButton3"
-            android:scaleType="fitCenter"
-            android:layout_row="2"
-            android:layout_column="2"
-            tools:layout_editor_absoluteX="352dp"
-            tools:layout_editor_absoluteY="174dp"
-            android:layout_marginBottom="11dp"
-            android:layout_above="@+id/textView1"
-            android:layout_toStartOf="@+id/imageButton4" />
-
-        <ImageButton
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            app:srcCompat="@drawable/right"
-            android:id="@+id/imageButton4"
-            android:scaleType="fitCenter"
-            tools:layout_editor_absoluteX="472dp"
-            tools:layout_editor_absoluteY="71dp"
-            android:layout_alignBottom="@+id/imageButton3"
-            android:layout_alignParentEnd="true"
-            android:layout_marginBottom="34dp" />
+            tools:layout_editor_absoluteY="294dp"
+            android:id="@+id/textView1"
+            android:text="Disconnected"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/imageButton2" />
 
     </RelativeLayout>
 

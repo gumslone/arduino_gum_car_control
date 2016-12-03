@@ -33,7 +33,7 @@
             android:layout_marginBottom="14dp" />
 
         <TextView
-            android:text="v 0.01 beta"
+            android:text="v 1.02"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
